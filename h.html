@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover a suite of premium web tools to enhance your digital experience at ZEROCODES PH.">
+    <title>ZEROCODES PH | Premium Web Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://i.ibb.co/kDMYNh6/CUTIEE.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#10b981',
+                        dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #111827, #1f2937);
+        }
+        .tool-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #10b981;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-200 min-h-screen">
+    <div id="particles-js"></div>
+
+    <header class="bg-dark/50 backdrop-blur-md fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-white hover:text-primary transition">
+                    ZEROCODES <span class="text-primary">PH</span>
+                </a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#tools" class="text-gray-300 hover:text-white transition">Tools</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white transition">About</a>
+                    <a href="developer.html" class="text-gray-300 hover:text-white transition">Developer</a>
+                </div>
+                <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 right-0 bg-dark/95 backdrop-blur-md p-4">
+                    <a href="#tools" class="block py-2 text-gray-300 hover:text-white transition">Tools</a>
+                    <a href="about.html" class="block py-2 text-gray-300 hover:text-white transition">About</a>
+                    <a href="developer.html" class="block py-2 text-gray-300 hover:text-white transition">Developer</a>
+                </div>
+                <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="container mx-auto px-6 py-16 text-center">
+            <h1 class="text-5xl font-bold mb-4 text-white">Welcome to ZEROCODES PH</h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">Discover our suite of premium web tools designed to elevate your online experience. From content creation to data analysis, we've got you covered.</p>
+            <a href="#tools" class="bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/80 transition duration-300">Explore Tools</a>
+        </section>
+
+        <section id="tools" class="container mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white">Our Premium Tools</h2>
+            <div class="mb-8 text-center">
+                <div class="bg-primary/10 backdrop-blur-md rounded-lg p-6 inline-block">
+                    <h3 class="text-2xl font-bold text-white mb-2">Total Tools</h3>
+                    <p id="totalToolCount" class="text-4xl font-bold text-primary">24</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 mb-8">Showing all 24 tools</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Song Downloader -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/0hRp839/musicdl.png" alt="Song Downloader" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Song Downloader</h3>
+                        <p class="text-gray-400 mb-4">Download your favorite tracks with ease.</p>
+                        <a href="https://musicdlbyzerocodes.onrender.com" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- TikTok Downloader -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/zfjpMYt/YT.png" alt="TikTok Downloader" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">TikTok Downloader Pro</h3>
+                        <p class="text-gray-400 mb-4">Download TikTok videos without watermarks.</p>
+                        <a href="https://tikdlpro.marjhun.click/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- YouTube Downloader -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/YZPWhb6/TIK.png" alt="YouTube Downloader" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">YouTube Downloader Pro</h3>
+                        <p class="text-gray-400 mb-4">Download YouTube videos hassle-free.</p>
+                        <a href="https://ytdlpro.zcdsph.site/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Page Info Checker -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/Qnwn1TG/PAGECHK.png" alt="Page Info Checker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Page Info Checker</h3>
+                        <p class="text-gray-400 mb-4">Check page info via token.</p>
+                        <a href="https://pageinfogetter.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Group Chat Info Checker -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/q7zfT5x/GCIINFO.png" alt="Group Chat Info Checker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Group Chat Info Checker</h3>
+                        <p class="text-gray-400 mb-4">Check group chat info via token.</p>
+                        <a href="https://groupchatcheckerpro.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Token Checker -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/dWHkQGL/TITI.png" alt="Token Checker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Token Checker</h3>
+                        <p class="text-gray-400 mb-4">Free token checker for any token type.</p>
+                        <a href="https://tokencheckerpro.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- SMS Bomb -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/QMr5B0w/smsbomb.png" alt="SMS Bomb" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Free SMS Bomb [LBC]</h3>
+                        <p class="text-gray-400 mb-4">SMS bombing tool for testing purposes.</p>
+                        <a href="#" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- SIM Brand Checker -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/ygLd8P7/smscheck.png" alt="SIM Brand Checker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">SIM Brand Checker</h3>
+                        <p class="text-gray-400 mb-4">Check SIM brand for Philippines.</p>
+                        <a href="https://simbrandcheckerph.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Free SMS -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/W606C5P/sms.png" alt="Free SMS" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Free SMS [LBC]</h3>
+                        <p class="text-gray-400 mb-4">Send free SMS worldwide.</p>
+                        <a href="https://freesmsbykenlieandzerocodes.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- UID Getter -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/h1SQtSM/LAMI.png" alt="UID Getter" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">UID Getter</h3>
+                        <p class="text-gray-400 mb-4">Extract User IDs easily.</p>
+                        <a href="https://uidextractor.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Free Movies -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/NNPYFwS/fe7fc2c5-b350-41b4-aeba-75a019cdad4b.png" alt="Free Movies" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Free Movies</h3>
+                        <p class="text-gray-400 mb-4">Watch movies from around the world.</p>
+                        <a href="https://zerocodesmovies.vercel.app/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- News Weather -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/FJ9zT5W/yatisss.png" alt="News Weather" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">News Weather</h3>
+                        <p class="text-gray-400 mb-4">Get weather updates and news.</p>
+                        <a href="https://newsweather.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- UPCAL Online Converter -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/NSc943W/upcal.png" alt="UPCAL Online Converter" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">UPCAL Online Converter</h3>
+                        <p class="text-gray-400 mb-4">Convert measurements online.</p>
+                        <a href="https://onlineconverter.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Quiz Test -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/JrbQ4mr/quiz.png" alt="Quiz Test" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Quiz Test</h3>
+                        <p class="text-gray-400 mb-4">Test your knowledge with interactive quizzes.</p>
+                        <a href="https://quiziqtest.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- IP Look Up Tool -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/7vvhWbk/iploc.png" alt="IP Look Up Tool" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">IP Look Up Tool</h3>
+                        <p class="text-gray-400 mb-4">Locate and get information about IP addresses.</p>
+                        <a href="https://iplocator.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Auto Share [APPSTATE] -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/vkjmxXH/fbshare.png" alt="Auto Share Tool" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Auto Share [APPSTATE]</h3>
+                        <p class="text-gray-400 mb-4">Automate Facebook sharing tasks.</p>
+                        <a href="https://autoshare.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Auto React Tool -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/kKvFYVr/autoreact.png" alt="Auto React Tool" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Auto React Tool</h3>
+                        <p class="text-gray-400 mb-4">Automate Facebook reactions.</p>
+                        <a href="https://autoreact.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- FB Reel DL -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/CK4Cp11/yawa.png" alt="FB Reel DL" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">FB Reel DL</h3>
+                        <p class="text-gray-400 mb-4">Download Facebook Reels easily.</p>
+                        <a href="https://fbdl.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Bible Verse Generator -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/NxRZHR7/bible.png" alt="Bible Verse Generator" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Bible Verse Generator</h3>
+                        <p class="text-gray-400 mb-4">Get random Bible verses from Old and New Testament.</p>
+                        <a href="https://biblegenerator.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Toshia Chatbot -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/pWgBWrc/toshi.png" alt="Toshia Chatbot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Toshia Chatbot</h3>
+                        <p class="text-gray-400 mb-4">AI-powered GPT-4 chatbot for conversations.</p>
+                        <a href="https://toshchatbot.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Lyrics Searcher -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/HdxRm4D/LC.png" alt="Lyrics Searcher" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Lyrics Searcher</h3>
+                        <p class="text-gray-400 mb-4">Find lyrics by providing song titles.</p>
+                        <a href="https://searchlyricsfree.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Temporary Email -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/qC2q75X/temp.png" alt="Temporary Email" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Temporary Email</h3>
+                        <p class="text-gray-400 mb-4">Get disposable email addresses for free.</p>
+                        <a href="https://temporaryemails.glitch.me/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Image Generator -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/9pfznjg/imagegen.png" alt="Image Generator" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Image Generator</h3>
+                        <p class="text-gray-400 mb-4">Generate images with AI technology.</p>
+                        <a href="https://imagegenerator.glitch.me/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+
+                <!-- Image Converter -->
+                <div class="tool-card rounded-lg overflow-hidden">
+                    <img src="https://i.ibb.co/h1bwHbg/imaagetolink.png" alt="Image Converter" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="status-dot"></span>
+                            <span class="text-green-400 text-sm">Online</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Image Converter</h3>
+                        <p class="text-gray-400 mb-4">Convert images to different formats easily.</p>
+                        <a href="https://imagetolink.marjhun.fun/" target="_blank" class="block w-full bg-primary text-white text-center py-2 px-4 rounded-full hover:bg-primary/80 transition duration-300">Access Tool</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark/50 backdrop-blur-md text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2024 ZEROCODES PH. All rights reserved.</p>
+            <a href="https://www.facebook.com/marjhuncutieee" target="_blank" class="text-primary hover:text-white transition">Connect with the Developer on Facebook</a>
+        </div>
+    </footer>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+                "opacity": { "value": 0.5, "random": false, "anim": { "enable": false } },
+                "size": { "value": 3, "random": true, "anim": { "enable": false } },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": { "distance": 200, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+
+        window.onload = function() {
+            Swal.fire({
+                title: 'Welcome to ZEROCODES PH',
+                html: `<p class="text-gray-700">Discover our premium web tools and elevate your online experience. - Marjhun Baylon</p>
+                       <div class="mt-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" class="mx-auto">
+                               <path fill="#3b82f6" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                           </svg>
+                       </div>`,
+                confirmButtonText: 'Explore Tools',
+                confirmButtonColor: '#3b82f6',
+                background: '#ffffff',
+                customClass: {
+                    title: 'text-2xl font-bold text-gray-800',
+                    popup: 'rounded-lg',
+                    confirmButton: 'px-6 py-2 rounded-full text-white font-semibold'
+                }
+            });
+        };
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toolCards = document.querySelectorAll('.tool-card');
+            const toolCount = toolCards.length;
+            
+            // Update hero section
+            const heroText = document.querySelector('.text-xl.text-gray-400.mb-8');
+            heroText.textContent = heroText.textContent.replace(/\d+/, toolCount);
+            
+            // Update tools section title
+            const toolsSectionTitle = document.querySelector('#tools h2');
+            toolsSectionTitle.textContent = `Our Premium Tools`;
+            
+            // Update tools count display
+            const toolsCountDisplay = document.querySelector('#tools p.text-center.text-gray-400.mb-8');
+            toolsCountDisplay.textContent = `Showing all ${toolCount} tools`;
+
+            // Update total count card
+            const totalToolCount = document.getElementById('totalToolCount');
+            totalToolCount.textContent = toolCount;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+</ReactProject>
